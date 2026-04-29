@@ -1,0 +1,8 @@
+{
+  "appId": "com.vandy.itscheduler",
+  "appName": "Vandy IT Scheduler",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http"
+  }
+}

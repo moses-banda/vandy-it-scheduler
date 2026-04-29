@@ -1,0 +1,78 @@
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:68: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "email": f"manager_{datetime.utcnow().timestamp():.0f}@vuit.edu",
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:79: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  worker_email = f"worker_{datetime.utcnow().timestamp():.0f}@vuit.edu"
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:145: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:155: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  open_t = (datetime.utcnow() - timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:156: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  close_t = (datetime.utcnow() + timedelta(hours=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_auth.py:194: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today = datetime.utcnow().strftime("%Y-%m-%d")
+=======================================================
+  VUIT SCHEDULER ΓÇö AUTH INTEGRATION TESTS
+=======================================================
+
+[1] Register manager account
+  Γ¥î FAIL: Register returns 200 ΓÇö got: 500
+  Γ¥î FAIL: Role is manager
+  Γ¥î FAIL: is_active is True
+
+[2] Register worker account
+  Γ¥î FAIL: Register worker returns 200 ΓÇö got: 500
+  Γ¥î FAIL: Role is worker
+
+[3] Duplicate email rejected
+  Γ¥î FAIL: Duplicate email blocked (400) ΓÇö got: 500
+
+[4] Login as manager
+  Γ¥î FAIL: Login returns 200 ΓÇö got: 422
+  Γ¥î FAIL: Token returned
+
+[5] Login as worker
+  Γ¥î FAIL: Login returns 200 ΓÇö got: 500
+
+[6] Wrong password rejected
+  Γ¥î FAIL: Wrong password returns 401 ΓÇö got: 500
+
+[7] GET /auth/me with valid token
+  Γ¥î FAIL: GET /auth/me returns 200 ΓÇö got: 401
+  Γ£à PASS: Returns manager email
+
+[7b] GET /auth/me with no token
+  Γ¥î FAIL: No token returns 403 ΓÇö got: 401
+
+[8] Role enforcement ΓÇö worker cannot create shifts
+  Γ¥î FAIL: Worker cannot create shift (403) ΓÇö got: 401
+
+[9] Manager creates a shift
+  Γ¥î FAIL: Manager can create shift (200) ΓÇö got: 401
+
+[10] Worker checks in using JWT identity
+  Γ¥î FAIL: Check-in returns 200 ΓÇö got: 401
+  Γ¥î FAIL: Check-in approved
+
+[11] Role enforcement ΓÇö worker cannot access dashboard
+  Γ¥î FAIL: Worker denied dashboard (403) ΓÇö got: 401
+
+[12] Manager accesses dashboard coverage
+  Γ¥î FAIL: Manager gets dashboard (200) ΓÇö got: 401
+  Γ¥î FAIL: Coverage has slots
+
+[13] Manager creates and rings a dispatch
+  Γ¥î FAIL: Manager creates dispatch (200) ΓÇö got: 401
+
+[14] Worker cannot create dispatch
+  Γ¥î FAIL: Worker blocked from creating dispatch (403) ΓÇö got: 401
+
+[15] Manager lists users
+  Γ¥î FAIL: Manager can list users (200) ΓÇö got: 401
+  Γ¥î FAIL: At least 2 users exist
+
+[16] Worker cannot list users
+  Γ¥î FAIL: Worker blocked from /users (403) ΓÇö got: 401
+
+=======================================================
+  RESULTS: 1 passed, 24 failed
+=======================================================

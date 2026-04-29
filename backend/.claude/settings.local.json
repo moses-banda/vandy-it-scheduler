@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs cat:*)",
+      "Bash(npm run:*)",
+      "Bash(npx cap:*)"
+    ]
+  }
+}

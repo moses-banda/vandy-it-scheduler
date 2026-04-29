@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(echo \"Frontend PID: $!\")",
+      "Read(//tmp/**)",
+      "Bash(pkill -f uvicorn)",
+      "Bash(pkill -f \"app.main\")",
+      "Bash(find /c/Users/bandam/vandy-serious/vandy-it-scheduler/backend/app -name \"*.pyc\" -delete)",
+      "Bash(find /c/Users/bandam/vandy-serious/vandy-it-scheduler/backend/app -name \"__pycache__\" -type d -exec rm -rf {} +)",
+      "Bash(taskkill //F //IM uvicorn.exe)",
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(xargs grep:*)"
+    ]
+  }
+}

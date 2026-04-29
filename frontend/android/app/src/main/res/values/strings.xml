@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vandy IT Scheduler</string>
+    <string name="title_activity_main">Vandy IT Scheduler</string>
+    <string name="package_name">com.vandy.itscheduler</string>
+    <string name="custom_url_scheme">com.vandy.itscheduler</string>
+</resources>

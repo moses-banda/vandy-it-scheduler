@@ -1,0 +1,31 @@
+C:\Users\bandam\vandy-serious\vandy-it-scheduler\backend\test_all.py:88: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  today_date = datetime.utcnow().strftime("%Y-%m-%d")
+1. Fetching building...
+Using building ID: 81267e89-91ac-44dd-8b5c-31fb20f8e0a1
+
+2. Creating dispatch...
+Created dispatch: 5ce55288-421a-4d2b-9352-7329e8ecd250 | Status: pending
+
+3. Triggering Ringing...
+Status after ring: ringing
+
+4. Accepting the dispatch...
+Status after accept: accepted
+
+5. Creating another dispatch...
+Testing reassigning...
+Status after reassign: pending
+New Worker: worker_456
+Ringing again and declining...
+Status after decline: declined
+
+6. Fetching Dispatch Summary for 2026-04-06...
+Found 5 dispatches in summary.
+- Projector down: pending (Color: gray)
+- Projector down: accepted (Color: green)
+- WiFi Down: declined (Color: red)
+- Projector down: accepted (Color: green)
+- WiFi Down: declined (Color: red)
+
+7. Fetching Dashboard Coverage...
+Found 0 coverage slots.
